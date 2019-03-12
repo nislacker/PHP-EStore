@@ -5,7 +5,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p style="text-align: center;">EStore © 2019</p>
+                <p style="text-align: center;">EShop © 2019</p>
             </div>
         </div>
     </div>
