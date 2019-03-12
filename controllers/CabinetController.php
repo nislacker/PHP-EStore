@@ -23,6 +23,19 @@ class CabinetController
         return true;
     }
 
+    public function actionStatistics()
+    {
+        // Получаем идентификатор пользователя из сессии
+        $userId = User::checkLogged();
+
+        // Получаем информацию о пользователе из БД
+        $user = User::getUserById($userId);
+
+        // Подключаем вид
+        require_once(ROOT . '/views/cabinet/statistics.php');
+        return true;
+    }
+
     /**
      * Action для страницы "Редактирование данных пользователя"
      */

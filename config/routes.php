@@ -19,6 +19,7 @@ return array(
     'user/login' => 'user/login',
     'user/logout' => 'user/logout',
     'cabinet/edit' => 'cabinet/edit',
+    'cabinet/statistics' => 'cabinet/statistics',
     'cabinet' => 'cabinet/index',
     // Управление товарами:    
     'admin/product/create' => 'adminProduct/create',
