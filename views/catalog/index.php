@@ -41,7 +41,7 @@
                                         
                                         <a href="#" data-id="<?php echo $product['id'];?>"
                                            class="btn btn-default add-to-cart">
-                                            <i class="fa fa-shopping-cart"></i>В корзину
+                                            🛒 Купить
                                         </a>
                                     </div>
                                     <?php if ($product['is_new']): ?>

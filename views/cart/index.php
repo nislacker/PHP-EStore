@@ -32,7 +32,7 @@
                             <tr>
                                 <th>Код товара</th>
                                 <th>Название</th>
-                                <th>Стомость, $</th>
+                                <th>Стоимость, грн</th>
                                 <th>Количество, шт</th>
                                 <th>Удалить</th>
                             </tr>
@@ -54,17 +54,17 @@
                                 </tr>
                             <?php endforeach; ?>
                                 <tr>
-                                    <td colspan="4">Общая стоимость, $:</td>
+                                    <td colspan="4">Общая стоимость, грн:</td>
                                     <td><?php echo $totalPrice;?></td>
                                 </tr>
                             
                         </table>
                         
-                        <a class="btn btn-default checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
+                        <a class="btn btn-default checkout" href="/cart/checkout">🛒  Оформить заказ</a>
                     <?php else: ?>
                         <p>Корзина пуста</p>
                         
-                        <a class="btn btn-default checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
+                        <a class="btn btn-default checkout" href="/">🛒  Вернуться к покупкам</a>
                     <?php endif; ?>
 
                 </div>

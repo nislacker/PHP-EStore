@@ -38,7 +38,7 @@
                                                 <?php echo $product['name']; ?>
                                             </a>
                                         </p>
-                                        <a href="#" class="btn btn-default add-to-cart" data-id="<?php echo $product['id']; ?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                        <a href="#" class="btn btn-default add-to-cart" data-id="<?php echo $product['id']; ?>">🛒 Купить</a>
                                     </div>
                                     <?php if ($product['is_new']): ?>
                                         <img src="/template/images/home/new.png" class="new" alt="" />
@@ -74,7 +74,7 @@
                                                 <?php echo $product['name']; ?>
                                             </a>
                                             <br/><br/>
-                                            <a href="#" class="btn btn-default add-to-cart" data-id="<?php echo $sliderItem['id']; ?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <a href="#" class="btn btn-default add-to-cart" data-id="<?php echo $sliderItem['id']; ?>">🛒 Купить</a>
                                         </div>
                                         <?php if ($sliderItem['is_new']): ?>
                                             <img src="/template/images/home/new.png" class="new" alt="" />

@@ -106,7 +106,9 @@ class UserController
     public function actionLogout()
     {
         // Стартуем сессию
-        session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         
         // Удаляем информацию о пользователе из сессии
         unset($_SESSION["user"]);
