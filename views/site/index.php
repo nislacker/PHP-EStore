@@ -32,7 +32,7 @@
                                 <div class="single-products">
                                     <div class="productinfo text-center">
                                         <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
-                                        <h2>$<?php echo $product['price']; ?></h2>
+                                        <h2><?php echo $product['price']; ?> грн.</h2>
                                         <p>
                                             <a href="/product/<?php echo $product['id']; ?>">
                                                 <?php echo $product['name']; ?>
@@ -69,7 +69,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="<?php echo Product::getImage($sliderItem['id']); ?>" alt="" />
-                                            <h2>$<?php echo $sliderItem['price']; ?></h2>
+                                            <h2><?php echo $sliderItem['price']; ?> грн.</h2>
                                             <a href="/product/<?php echo $sliderItem['id']; ?>">
                                                 <?php echo $product['name']; ?>
                                             </a>

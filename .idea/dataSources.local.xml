@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="phpshop@localhost" uuid="80e6457d-6988-42ce-9cc9-588393dd9080">
+    <data-source name="eshop@localhost" uuid="cc2d30e9-fffe-47ac-9975-98d290274fd5">
       <database-info product="MySQL" version="8.0.12" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:phpshop</introspection-schemas>
+      <introspection-schemas>*:eshop</introspection-schemas>
     </data-source>
   </component>
 </project>
