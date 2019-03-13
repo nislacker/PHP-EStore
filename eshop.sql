@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 13 2019 г., 06:02
+-- Время создания: Мар 13 2019 г., 10:57
 -- Версия сервера: 8.0.12
 -- Версия PHP: 5.6.38
 
@@ -127,6 +127,16 @@ CREATE TABLE `product_order` (
   `status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `product_order`
+--
+
+INSERT INTO `product_order` (`id`, `user_name`, `user_phone`, `user_comment`, `user_id`, `date`, `products`, `status`) VALUES
+(1, 'Василий', '0661234567', 'Заранее благодарю!', 1, '2019-03-13 04:39:26', '{\"37\":1}', 1),
+(2, 'Алиса', '0661111111', '', 2, '2019-03-13 05:08:59', '{\"35\":1,\"32\":1}', 1),
+(3, 'Виктория', '0667777777', '', 3, '2019-03-13 05:10:43', '{\"35\":1}', 1),
+(4, 'Admin', '0661889110', '', 1, '2019-03-13 05:56:28', '{\"34\":1}', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -168,7 +178,7 @@ CREATE TABLE `user_login_logout_statistics` (
 --
 
 INSERT INTO `user_login_logout_statistics` (`id`, `user_id`, `login_time`, `logout_time`) VALUES
-(14, 1, 1552437067, 1552437071),
+(14, 1, 1052437067, 1052437071),
 (15, 2, 1552437085, 1552437092),
 (16, 3, 1552437124, 1552437129),
 (17, 1, 1552437136, 1552437349),
@@ -178,7 +188,15 @@ INSERT INTO `user_login_logout_statistics` (`id`, `user_id`, `login_time`, `logo
 (21, 1, 1552441451, 1552441528),
 (22, 1, 1552441531, 1552441590),
 (23, 1, 1552441593, 1552442054),
-(24, 1, 1552442067, NULL);
+(24, 1, 1552442067, NULL),
+(25, 1, 1552449374, 1552451847),
+(26, 1, 1552451954, 1552452102),
+(27, 1, 1552452134, NULL),
+(28, 2, 1552453689, 1552453790),
+(29, 3, 1552453794, 1552454156),
+(30, 2, 1552454166, 1552454169),
+(31, 1, 1552454174, 1552456591),
+(32, 1, 1552456595, NULL);
 
 -- --------------------------------------------------------
 
@@ -206,7 +224,40 @@ INSERT INTO `user_visit_leave_category` (`id`, `user_id`, `category_id`, `time_i
 (29, 1, 3, 1552442099, NULL),
 (30, 1, 2, NULL, NULL),
 (31, 1, 2, NULL, NULL),
-(32, 1, 4, NULL, NULL);
+(32, 1, 4, NULL, 1552448557),
+(33, 1, 1, 1552448557, 1552448560),
+(34, 1, 1, 1552448560, 1552448563),
+(35, 1, 1, 1552448563, 1552448572),
+(36, 1, 1, 1552448572, 1552450563),
+(37, 1, 3, 1552450563, 1552463606),
+(38, 1, 1, 1552463606, 1552463639),
+(39, 1, 1, 1552463639, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_visit_product`
+--
+
+CREATE TABLE `user_visit_product` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user_visit_product`
+--
+
+INSERT INTO `user_visit_product` (`id`, `user_id`, `product_id`) VALUES
+(1, 2, 2),
+(2, 3, 3),
+(3, 2, 4),
+(4, 3, 2),
+(5, 1, 37),
+(6, 1, 13),
+(7, 1, 3),
+(8, 1, 3);
 
 --
 -- Индексы сохранённых таблиц
@@ -249,6 +300,12 @@ ALTER TABLE `user_visit_leave_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user_visit_product`
+--
+ALTER TABLE `user_visit_product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -268,7 +325,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `product_order`
 --
 ALTER TABLE `product_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
@@ -280,13 +337,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `user_login_logout_statistics`
 --
 ALTER TABLE `user_login_logout_statistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `user_visit_leave_category`
 --
 ALTER TABLE `user_visit_leave_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT для таблицы `user_visit_product`
+--
+ALTER TABLE `user_visit_product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
