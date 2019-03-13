@@ -5,10 +5,10 @@
                 <div class="col-sm-11">
 
 
-                    <canvas id="myChart" width="800" height="600"></canvas>
+                    <canvas id="myChart1" width="800" height="600"></canvas>
                     <script src="/template/js/Chart.min.js"></script>
                     <script>
-                        var ctx = document.getElementById("myChart");
+                        var ctx = document.getElementById("myChart1");
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
@@ -41,7 +41,7 @@
                                 },
                                 title: {
                                     display: true,
-                                    text: 'Среднее время нахождения пользователя на сайте',
+                                    text: '1. Среднее время нахождения пользователя на сайте',
                                     fontSize: 16,
                                     fontColor: 'rgba(255,0,0,0.9)',
                                 },

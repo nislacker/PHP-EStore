@@ -85,6 +85,32 @@ class Order
     }
 
     /**
+     * Возвращает все заказы
+     *
+     * @return array <p>Массив со всеми заказами</p>
+     */
+    public static function getAllOrders()
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT * FROM product_order';
+
+        $result = $db->prepare($sql);
+//        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполняем запрос
+        $result->execute();
+
+        // Возвращаем данные
+        return $result->fetchAll();
+    }
+
+    /**
      * Возвращает заказ с указанным id 
      * @param integer $id <p>id</p>
      * @return array <p>Массив с информацией о заказе</p>

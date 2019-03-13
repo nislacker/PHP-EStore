@@ -5,16 +5,16 @@
                 <div class="col-sm-11">
 
 
-                    <canvas id="myChart3" width="800" height="600"></canvas>
+                    <canvas id="myChart5" width="800" height="600"></canvas>
                     <script src="/template/js/Chart.min.js"></script>
                     <script>
-                        var ctx = document.getElementById("myChart3");
+                        var ctx = document.getElementById("myChart5");
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: <?= $productsStr; ?>,
+                                labels: <?= $productsStr5; ?>,
                                 datasets: [{
-                                    data: <?= $productsViewsStr; ?>,
+                                    data: <?= $productsBuysStr5; ?>,
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',
@@ -41,7 +41,7 @@
                                 },
                                 title: {
                                     display: true,
-                                    text: '3. Посещаемость конкретного товара',
+                                    text: '5. Самые покупаемые товары (до 10)',
                                     fontSize: 16,
                                     fontColor: 'rgba(255,0,0,0.9)',
                                 },
@@ -52,7 +52,7 @@
                                         },
                                         scaleLabel: {
                                             display: true,
-                                            labelString: 'Посещения',
+                                            labelString: 'Покупки',
                                             fontSize: 16,
                                             fontColor: 'rgba(255,0,0,0.9)',
                                         },
@@ -95,17 +95,19 @@
                     <thead>
                     <tr>
                         <th>Id товара</th>
+                        <th>Кол-во товара</th>
                         <th>Наименование</th>
                     </tr>
                     </thead>
                     <tbody>
 
                     <?php
-                    foreach ($products as $product): ?>
+                    foreach ($productsBuys5 as $k => $v): ?>
 
                         <tr class="bg-primary">
-                            <td><?= $product; ?></td>
-                            <td><?= Statistic::getProductNameById($product); ?></td>
+                            <td><?= $k; ?></td>
+                            <td><?= $v; ?></td>
+                            <td><?= Statistic::getProductNameById($k); ?></td>
                         </tr>
 
                     <?php endforeach; ?>

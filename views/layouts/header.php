@@ -80,7 +80,7 @@
                                     <li><a href="/user/login/">&#128682; &nbsp; Вход</a></li>
                                 <?php else: ?>
                                     <li><a href="/cabinet/"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                    <li><a href="/user/logout/"><i class="fa fa-unlock"></i> Выход</a></li>
+                                    <li><a href="/user/logout/">🚪 Выход</a></li>
                                 <?php endif; ?>
                             </ul>
                         </div>

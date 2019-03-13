@@ -5,16 +5,16 @@
                 <div class="col-sm-11">
 
 
-                    <canvas id="myChart3" width="800" height="600"></canvas>
+                    <canvas id="myChart4" width="800" height="600"></canvas>
                     <script src="/template/js/Chart.min.js"></script>
                     <script>
-                        var ctx = document.getElementById("myChart3");
+                        var ctx = document.getElementById("myChart4");
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: <?= $productsStr; ?>,
+                                labels: <?= $datesToShowStr; ?>,
                                 datasets: [{
-                                    data: <?= $productsViewsStr; ?>,
+                                    data: <?= $datesCountsStr; ?>,
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',
@@ -41,7 +41,8 @@
                                 },
                                 title: {
                                     display: true,
-                                    text: '3. Посещаемость конкретного товара',
+                                    text: '4. Посещаемость сайта за указанный период',
+<!--                                    <?//= $titleText; ?>-->
                                     fontSize: 16,
                                     fontColor: 'rgba(255,0,0,0.9)',
                                 },
@@ -63,7 +64,7 @@
                                         },
                                         scaleLabel: {
                                             display: true,
-                                            labelString: 'id товара',
+                                            labelString: 'Дата',
                                             fontSize: 16,
                                             fontColor: 'rgba(255,0,0,0.9)',
                                         },
@@ -86,33 +87,3 @@
         </div>
     </div>
 </section>
-
-<div class="container" style="margin-top: 50px;">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="table-responsive-sm">
-                <table class="table table-hover table-bordered table-sm">
-                    <thead>
-                    <tr>
-                        <th>Id товара</th>
-                        <th>Наименование</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <?php
-                    foreach ($products as $product): ?>
-
-                        <tr class="bg-primary">
-                            <td><?= $product; ?></td>
-                            <td><?= Statistic::getProductNameById($product); ?></td>
-                        </tr>
-
-                    <?php endforeach; ?>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
