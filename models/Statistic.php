@@ -8,6 +8,78 @@
 
 class Statistic
 {
+    public static function setVisitToProductById($productId)
+    {
+        if (!isset($_SESSION['user'])) {
+            return false;
+        }
+
+        $userId = $_SESSION['user'];
+
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'INSERT INTO user_visit_product (user_id, product_id) VALUES (:user_id, :product_id)';
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+
+        $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $result->bindParam(':product_id', $productId, PDO::PARAM_INT);
+
+        $result->execute();
+    }
+
+    public static function getProductNameById($productId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT name FROM product WHERE id = :id';
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $productId, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+
+        $product = $result->fetch();
+        return $product['name'];
+    }
+
+    public static function getProductsViews()
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT product_id, count(*) as count
+FROM user_visit_product
+GROUP BY product_id';
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+
+        $productsViewsArr = $result->fetchAll();
+
+        $productsViews = [];
+
+        foreach ($productsViewsArr as $k => $v) {
+            $product_id = $v['product_id'];
+            $productsViews[$product_id] = $v['count'];
+        }
+
+        return $productsViews;
+    }
+
     public static function getAllUsersLoginLogoutTimes()
     {
         // Соединение с БД
@@ -45,8 +117,7 @@ class Statistic
 
         $categoriesNames = [];
 
-        foreach ($categories as $k => $v)
-        {
+        foreach ($categories as $k => $v) {
             $categoriesNames[] = $v['name'];
         }
 
@@ -94,8 +165,7 @@ GROUP BY category_id';
 
         $categoriesTimesOfVisiting = [];
 
-        foreach ($categories as $k => $v)
-        {
+        foreach ($categories as $k => $v) {
             $category_id = $v['category_id'];
             $categoriesTimesOfVisiting[$category_id] = $v['count'];
         }

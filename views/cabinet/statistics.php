@@ -40,8 +40,7 @@ $categoriesVisitingTimesStr = "['" . $categoriesVisitingTimesStr . "']";
 
 $categories = [];
 
-foreach ($categoriesVisitingTimes as $k => $v)
-{
+foreach ($categoriesVisitingTimes as $k => $v) {
     $categories[] = Statistic::getCategoryNameById($k);
 }
 
@@ -49,7 +48,62 @@ $categoriesStr = implode("', '", $categories);
 $categoriesStr = "['" . $categoriesStr . "']";
 ?>
 
-<?php require_once 'charts/chart2_TimesOfVisitingCategory.php' ?>
+<?php //require_once 'charts/chart2_TimesOfVisitingCategory.php' ?>
+<?php
+// ключ -- id-товара, значение -- количество просмотров(посещений) товара
+$productsViews = Statistic::getProductsViews();
 
+ksort($productsViews);
+
+$productsViewsStr = implode("', '", $productsViews);
+$productsViewsStr = "['" . $productsViewsStr . "']";
+
+
+$products = [];
+
+foreach ($productsViews as $k => $v) {
+    $products[] = $k; //Statistic::getProductNameById($k);
+}
+
+$productsStr = implode("', '", $products);
+$productsStr = "['" . $productsStr . "']";
+
+//print_r($productsStr);
+
+
+?>
+
+<?php require_once 'charts/chart3_TimesOfVisitingProduct.php'; ?>
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive-sm">
+                    <table class="table table-hover table-bordered table-sm">
+                        <thead>
+                        <tr>
+                            <th>Id товара</th>
+                            <th>Наименование</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php
+                        foreach ($products as $product): ?>
+
+                            <tr class="bg-primary">
+                                <td><?= $product; ?></td>
+                                <td><?= Statistic::getProductNameById($product); ?></td>
+                            </tr>
+
+
+                        <?php endforeach; ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

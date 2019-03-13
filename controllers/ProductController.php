@@ -13,6 +13,8 @@ class ProductController
      */
     public function actionView($productId)
     {
+        Statistic::setVisitToProductById($productId);
+
         // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 

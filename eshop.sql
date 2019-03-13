@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 12 2019 г., 20:35
+-- Время создания: Мар 13 2019 г., 06:02
 -- Версия сервера: 8.0.12
 -- Версия PHP: 5.6.38
 
@@ -142,6 +142,73 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `role`) VALUES
+(1, 'Admin', 'nislacker@gmail.com', '111111', 'admin'),
+(2, 'Алиса', 'alice@gmail.com', 'wonderland', 'user'),
+(3, 'Виктория', 'victoria@gmail.com', 'victory', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_login_logout_statistics`
+--
+
+CREATE TABLE `user_login_logout_statistics` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `login_time` int(11) DEFAULT NULL,
+  `logout_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user_login_logout_statistics`
+--
+
+INSERT INTO `user_login_logout_statistics` (`id`, `user_id`, `login_time`, `logout_time`) VALUES
+(14, 1, 1552437067, 1552437071),
+(15, 2, 1552437085, 1552437092),
+(16, 3, 1552437124, 1552437129),
+(17, 1, 1552437136, 1552437349),
+(18, 1, 1552440524, 1552441189),
+(19, 1, 1552441197, 1552441256),
+(20, 1, 1552441259, 1552441445),
+(21, 1, 1552441451, 1552441528),
+(22, 1, 1552441531, 1552441590),
+(23, 1, 1552441593, 1552442054),
+(24, 1, 1552442067, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_visit_leave_category`
+--
+
+CREATE TABLE `user_visit_leave_category` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `time_in` int(11) DEFAULT NULL,
+  `time_out` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user_visit_leave_category`
+--
+
+INSERT INTO `user_visit_leave_category` (`id`, `user_id`, `category_id`, `time_in`, `time_out`) VALUES
+(25, 1, 2, 1552442071, 1552442072),
+(26, 1, 1, 1552442072, 1552442079),
+(27, 1, 3, 1552442079, 1552442087),
+(28, 1, 4, 1552442087, 1552442099),
+(29, 1, 3, 1552442099, NULL),
+(30, 1, 2, NULL, NULL),
+(31, 1, 2, NULL, NULL),
+(32, 1, 4, NULL, NULL);
+
+--
 -- Индексы сохранённых таблиц
 --
 
@@ -170,6 +237,18 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user_login_logout_statistics`
+--
+ALTER TABLE `user_login_logout_statistics`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `user_visit_leave_category`
+--
+ALTER TABLE `user_visit_leave_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -195,7 +274,19 @@ ALTER TABLE `product_order`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `user_login_logout_statistics`
+--
+ALTER TABLE `user_login_logout_statistics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT для таблицы `user_visit_leave_category`
+--
+ALTER TABLE `user_visit_leave_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
