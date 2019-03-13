@@ -63,8 +63,7 @@ class Statistic
         $usersIds = $result->fetchAll();
         $ids = [];
 
-        foreach ($usersIds as $usersId)
-        {
+        foreach ($usersIds as $usersId) {
             $ids[] = $usersId['id'];
         }
 
@@ -85,7 +84,7 @@ class Statistic
             $sumTime += $timeDiffSecs;
         }
 
-        return $sumTime/count($usersTimes);
+        return $sumTime / count($usersTimes);
     }
 
     /**
@@ -97,9 +96,10 @@ class Statistic
     {
         $totalTime = self::getTotalTimeThatUserIsOnlineById($id);
         $totalTimes = self::getTotalTimesThatUserIsOnlineById($id);
-        if ($totalTimes['count(id)'] == 0)
+        if ($totalTimes['count(id)'] == 0) {
             return 0;
-        return $totalTime/$totalTimes['count(id)']/60;
+        }
+        return $totalTime / $totalTimes['count(id)'] / 60;
     }
 
     public static function getTotalTimesThatUserIsOnlineById($id)
@@ -142,8 +142,14 @@ class Statistic
 
         foreach ($userTimes as $userTime) {
             //
+
+            if (!isset($userTime['logout_time']) || !isset($userTime['login_time'])) {
+                continue;
+            }
             $logoutTime = intval($userTime['logout_time']);
             $loginTime = intval($userTime['login_time']);
+
+
             $timeDiffSecs = $logoutTime - $loginTime;
 
             $sumTime += $timeDiffSecs;
@@ -178,5 +184,60 @@ class Statistic
         //    echo implode(', ', $ids);
         print_r($ids);
         echo '</pre>';
+    }
+
+    public static function getAdminId()
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT id FROM user WHERE role = :role';
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $role = 'admin';
+        $result->bindParam(':role', $role, PDO::PARAM_STR);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+        $adminId = intval($result->fetch());
+
+        return $adminId;
+    }
+
+    public static function setLoginTimeById($id)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'INSERT INTO user_login_logout_statistics (user_id, login_time) VALUES (:id, :time)';
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $time = time(); // now
+        $result->bindParam(':time', $time, PDO::PARAM_INT);
+
+        $result->execute();
+    }
+
+    public static function setLogoutTimeById($id)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'UPDATE user_login_logout_statistics SET logout_time = :time WHERE user_id = :id ORDER BY id DESC LIMIT 1';
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $time = time(); // now
+        $result->bindParam(':time', $time, PDO::PARAM_INT);
+
+        $result->execute();
     }
 }

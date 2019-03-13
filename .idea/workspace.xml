@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c01144d0-00c5-4eb2-868a-4befdfba87ba" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc2d30e9-fffe-47ac-9975-98d290274fd5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cc2d30e9-fffe-47ac-9975-98d290274fd5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CabinetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CabinetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Statistic.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Statistic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cabinet/statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cabinet/statistics.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,32 +55,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="statistics.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="statistics.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cabinet/statistics.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="181">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layouts/footer.php">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="301">
+              <caret line="116" selection-start-line="116" selection-end-line="116" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chart1_AvgTimeOnSiteForUser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+            <state relative-caret-position="308">
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -88,14 +86,11 @@
         <entry file="file://$PROJECT_DIR$/models/Statistic.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="495">
-              <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+              <caret line="232" column="96" selection-start-line="232" selection-start-column="96" selection-end-line="232" selection-end-column="96" />
               <folding>
-                <element signature="n#getAllUsersLoginLogoutTimes#0;n#Statistic#0;n#!!top" />
-                <element signature="n#getAllUsersLoginLogoutTimes#1;n#Statistic#0;n#!!top" />
                 <element signature="n#getUsersIds#0;n#Statistic#0;n#!!top" />
                 <element signature="n#getAvarageTimeThatUserIsOnline#0;n#Statistic#0;n#!!top" />
                 <element signature="n#getTotalTimesThatUserIsOnlineById#0;n#Statistic#0;n#!!top" />
-                <element signature="n#getTotalTimeThatUserIsOnlineById#0;n#Statistic#0;n#!!top" />
                 <element signature="n#getTotalUserLoginsCount#0;n#Statistic#0;n#!!top" />
                 <element signature="n#getAverageTimeThatUsersAreOnline#0;n#Statistic#0;n#!!top" />
               </folding>
@@ -103,7 +98,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_login_logout_statistics" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chart1_AvgTimeOnSiteForUser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1826">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/user/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_login_logout_statistics" pinned="false" current-in-tab="true">
         <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user_login_logout_statistics">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -112,38 +123,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/User.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="214" selection-start-line="214" selection-end-line="215" />
+            <state relative-caret-position="561">
+              <caret line="103" column="14" lean-forward="true" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CabinetController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/CabinetController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/ProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+      <file leaf-file-name="user" pinned="false" current-in-tab="false">
+        <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -152,7 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>class=&quot;fa fa-angle-up</find>
       <find>#F0F0E9</find>
       <find>696763</find>
       <find>222222</find>
@@ -182,6 +174,7 @@
       <find>🛒</find>
       <find>cycle-slideshow</find>
       <find>productinfo</find>
+      <find>$_POST</find>
     </findStrings>
     <replaceStrings>
       <replace>#FED76A</replace>
@@ -193,8 +186,8 @@
       <replace>Стомость, грн</replace>
       <replace>Стоимость</replace>
       <replace>🛒</replace>
-      <replace>🛒</replace>
       <replace>5b8f3b</replace>
+      <replace>🛒</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\OSPanel\domains\shop.php-start.comFinal2</dir>
@@ -220,14 +213,15 @@
         <option value="$PROJECT_DIR$/views/catalog/category.php" />
         <option value="$PROJECT_DIR$/views/cabinet/index.php" />
         <option value="$PROJECT_DIR$/controllers/AdminBase.php" />
-        <option value="$PROJECT_DIR$/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/template/css/main.css" />
         <option value="$PROJECT_DIR$/views/site/index.php" />
         <option value="$PROJECT_DIR$/config/routes.php" />
         <option value="$PROJECT_DIR$/controllers/CabinetController.php" />
-        <option value="$PROJECT_DIR$/models/Statistic.php" />
         <option value="$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php" />
         <option value="$PROJECT_DIR$/views/cabinet/statistics.php" />
+        <option value="$PROJECT_DIR$/controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/models/Statistic.php" />
       </list>
     </option>
   </component>
@@ -295,6 +289,31 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="cabinet" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="shop.php-start.comFinal2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop.php-start.comFinal2" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="cabinet" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop.php-start.comFinal2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop.php-start.comFinal2" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop.php-start.comFinal2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop.php-start.comFinal2" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop.php-start.comFinal2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop.php-start.comFinal2" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -309,6 +328,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../bootstrap4" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -344,12 +364,12 @@
       <workItem from="1552346453963" duration="619000" />
       <workItem from="1552374788229" duration="7735000" />
       <workItem from="1552386028392" duration="5833000" />
-      <workItem from="1552394823266" duration="28257000" />
+      <workItem from="1552394823266" duration="31659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46477000" />
+    <option name="totallyTimeSpent" value="49879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1753" height="962" extended-state="6" />
@@ -362,9 +382,9 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.2451923" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.3005848" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1522124" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1522124" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.19764012" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.19764012" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -389,31 +409,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/template/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="1152" selection-start-line="3" selection-start-column="1152" selection-end-line="3" selection-end-column="1152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-          <folding>
-            <element signature="e#4011#4017#0#HTML" expanded="true" />
-            <element signature="e#4399#4405#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cart/checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/blog/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1630" />
@@ -561,20 +556,6 @@
     <entry file="file://$PROJECT_DIR$/eshop.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="110" column="9" lean-forward="true" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -597,24 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/cabinet/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="10" column="14" selection-end-line="40" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -646,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/CabinetController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -667,37 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Statistic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
-          <folding>
-            <element signature="n#getAllUsersLoginLogoutTimes#0;n#Statistic#0;n#!!top" />
-            <element signature="n#getAllUsersLoginLogoutTimes#1;n#Statistic#0;n#!!top" />
-            <element signature="n#getUsersIds#0;n#Statistic#0;n#!!top" />
-            <element signature="n#getAvarageTimeThatUserIsOnline#0;n#Statistic#0;n#!!top" />
-            <element signature="n#getTotalTimesThatUserIsOnlineById#0;n#Statistic#0;n#!!top" />
-            <element signature="n#getTotalTimeThatUserIsOnlineById#0;n#Statistic#0;n#!!top" />
-            <element signature="n#getTotalUserLoginsCount#0;n#Statistic#0;n#!!top" />
-            <element signature="n#getAverageTimeThatUsersAreOnline#0;n#Statistic#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user_login_logout_statistics">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -708,10 +637,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/cabinet/statistics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="181">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cabinet/charts/chart1_AvgTimeOnSiteForUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1826">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Statistic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="232" column="96" selection-start-line="232" selection-start-column="96" selection-end-line="232" selection-end-column="96" />
+          <folding>
+            <element signature="n#getUsersIds#0;n#Statistic#0;n#!!top" />
+            <element signature="n#getAvarageTimeThatUserIsOnline#0;n#Statistic#0;n#!!top" />
+            <element signature="n#getTotalTimesThatUserIsOnlineById#0;n#Statistic#0;n#!!top" />
+            <element signature="n#getTotalUserLoginsCount#0;n#Statistic#0;n#!!top" />
+            <element signature="n#getAverageTimeThatUsersAreOnline#0;n#Statistic#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66" />
+      </provider>
+    </entry>
+    <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="103" column="14" lean-forward="true" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://cc2d30e9-fffe-47ac-9975-98d290274fd5/schema/eshop/table/user_login_logout_statistics">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

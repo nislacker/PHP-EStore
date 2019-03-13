@@ -27,18 +27,8 @@ $usersAvgTimesOnlineStr = "['" . $usersAvgTimesOnlineStr . "']";
 
 ?>
 
-    <section>
-        <div class="table-responsive">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-11">
 
-                        <?php require_once 'charts/chart1_AvgTimeOnSiteForUser.php' ?>
+<?php require_once 'charts/chart1_AvgTimeOnSiteForUser.php' ?>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

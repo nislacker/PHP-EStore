@@ -87,6 +87,9 @@ class UserController
                 // Если данные неправильные - показываем ошибку
                 $errors[] = 'Неправильные данные для входа на сайт';
             } else {
+                // Записываем в БД время входа пользователя
+                Statistic::setLoginTimeById($userId);
+
                 // Если данные правильные, запоминаем пользователя (сессия)
                 User::auth($userId);
 
@@ -109,6 +112,10 @@ class UserController
         if(!isset($_SESSION)) {
             session_start();
         }
+
+        $userId = intval($_SESSION["user"]);
+        // Записываем в БД время входа пользователя
+        Statistic::setLogoutTimeById($userId);
         
         // Удаляем информацию о пользователе из сессии
         unset($_SESSION["user"]);
