@@ -119,7 +119,9 @@ class UserController
         
         // Удаляем информацию о пользователе из сессии
         unset($_SESSION["user"]);
-        
+
+        $_SESSION['lastCategoryId'] = -1;
+
         // Перенаправляем пользователя на главную страницу
         header("Location: /");
     }

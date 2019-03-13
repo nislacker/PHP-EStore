@@ -7,11 +7,16 @@
 class CatalogController
 {
 
+
     /**
      * Action для страницы "Каталог товаров"
      */
     public function actionIndex()
     {
+//        $userId = $_SESSION['user'];
+//        Statistic::setCategoryVisitTimeByUserAndCategoryId($userId, 1);
+
+
         // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 
@@ -28,6 +33,16 @@ class CatalogController
      */
     public function actionCategory($categoryId, $page = 1)
     {
+        if (isset($_SESSION['user'])) {
+
+            $userId = $_SESSION['user'];
+
+            Statistic::setCategoryLeaveTimeByUserId($userId);
+
+            $_SESSION['lastCategoryId'] = $categoryId;
+            Statistic::setCategoryVisitTimeByUserAndCategoryId($userId, $categoryId);
+        }
+
         // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 

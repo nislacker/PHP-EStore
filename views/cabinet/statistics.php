@@ -27,8 +27,29 @@ $usersAvgTimesOnlineStr = "['" . $usersAvgTimesOnlineStr . "']";
 
 ?>
 
+<?php //require_once 'charts/chart1_AvgTimeOnSiteForUser.php' ?>
 
-<?php require_once 'charts/chart1_AvgTimeOnSiteForUser.php' ?>
+<?php
+
+$categoriesVisitingTimes = Statistic::getTimesOfVisitingCategories();
+
+ksort($categoriesVisitingTimes);
+
+$categoriesVisitingTimesStr = implode("', '", $categoriesVisitingTimes);
+$categoriesVisitingTimesStr = "['" . $categoriesVisitingTimesStr . "']";
+
+$categories = [];
+
+foreach ($categoriesVisitingTimes as $k => $v)
+{
+    $categories[] = Statistic::getCategoryNameById($k);
+}
+
+$categoriesStr = implode("', '", $categories);
+$categoriesStr = "['" . $categoriesStr . "']";
+?>
+
+<?php require_once 'charts/chart2_TimesOfVisitingCategory.php' ?>
 
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>
